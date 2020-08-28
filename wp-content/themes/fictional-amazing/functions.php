@@ -9,6 +9,9 @@ add_action('wp_enqueue_scripts','university_files');    // to load our css file
 
 function university_features() { 
 add_theme_support('title-tag');//for title
+register_nav_menu('header_menu_loc','Header Menu Location');
+register_nav_menu('footer_loc1','Footer Location 1');
+register_nav_menu('footer_loc2','Footer Location 2');
 
 }
 

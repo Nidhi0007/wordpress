@@ -33,11 +33,14 @@ gulp.task('watch', function() {
   browserSync.init({
     notify: false,
     proxy: settings.urlToPreview,
-    ghostMode: false
+    ghostMode: false,
+    
   });
 
   gulp.watch('./**/*.php', function() {
+    cb();
     browserSync.reload();
+    
   });
   gulp.watch(settings.themeLocation + 'css/**/*.css', gulp.parallel('waitForStyles'));
   gulp.watch([settings.themeLocation + 'js/modules/*.js', settings.themeLocation + 'js/scripts.js'], gulp.parallel('waitForScripts'));
